@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Tool {
-    private String toolCode;
-    private ToolType toolType;
-    private String brand;
+	private String toolCode;
+	private ToolType toolType;
+	private String brand;
 
 }

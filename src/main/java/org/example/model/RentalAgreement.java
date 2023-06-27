@@ -38,8 +38,7 @@ public class RentalAgreement {
 	 * @param rentalCharge
 	 * @param checkout
 	 */
-	public RentalAgreement(Tool tool, RentalCharge rentalCharge,
-						   Checkout checkout) {
+	public RentalAgreement(Tool tool, RentalCharge rentalCharge, Checkout checkout) {
 		toolCode = checkout.getToolCode();
 		toolType = tool.getToolType();
 		toolBrand = tool.getBrand();
