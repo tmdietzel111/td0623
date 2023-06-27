@@ -2,12 +2,16 @@ package org.example.service;
 
 import org.example.model.*;
 import org.example.repository.ToolRepository;
+import org.example.util.ChargeUtil;
 import org.example.util.DayCountingUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
-
+/**
+ * Service Layer, handles all of the main logic for doing the checkout
+ * <p>
+ * Gets the data from the repository, walks through the business logic to calculate days etc
+ */
 @Service
 public class CheckoutService {
 	private final ToolRepository toolRepository;
@@ -17,14 +21,40 @@ public class CheckoutService {
 		this.toolRepository = toolRepository;
 	}
 
+	/**
+	 * Simple method to go get the tool from the repository
+	 * <p>
+	 * Note: For this example, this method is overkill - but it would make sense to extend this API to allow users to pull tools directly
+	 * So I made it a standalone public method
+	 *
+	 * @param code
+	 * @return
+	 */
 	public Tool getTool(String code) {
 		return toolRepository.getToolByCode(code);
 	}
 
+	/**
+	 * Simple method to go get the Rental Charge from the repository
+	 * <p>
+	 * Note: For this example, this method is overkill - but it would make sense to extend this API to allow users to pull Tool Charges directly
+	 * So I made it a standalone public method
+	 *
+	 * @param toolType
+	 * @return
+	 */
 	public RentalCharge getRentalCharge(ToolType toolType) {
 		return toolRepository.getRentalCharges(toolType);
 	}
 
+	/**
+	 * Calculates the rental agreement for the passed in checkout
+	 * <p>
+	 * Assumes the checkout is valid (Controller validation) so does not do much redundant checking
+	 *
+	 * @param checkout
+	 * @return
+	 */
 	public RentalAgreement getRentalAgreement(Checkout checkout) {
 		Tool basicTool = getTool(checkout.getToolCode());
 		RentalCharge rentalCharge = getRentalCharge(basicTool.getToolType());
@@ -44,24 +74,14 @@ public class CheckoutService {
 			rentalAgreement.removeChargeDays(DayCountingUtil.countHolidays(rentalAgreement));
 		}
 
-		calculateCharges(rentalAgreement);
+		rentalAgreement.setPreDiscountCharge(ChargeUtil.calculatePreDiscountCharge(rentalAgreement));
+		rentalAgreement.setDiscountAmount(ChargeUtil.calculateDiscountAmount(rentalAgreement));
 
-		return rentalAgreement;
-	}
+		//This is simple math, could be externalized but we're just doing it here since there isn't any rounding rules
+		rentalAgreement.setFinalCharge(rentalAgreement.getPreDiscountCharge().
+				subtract(rentalAgreement.getDiscountAmount()));
 
 
-	private RentalAgreement calculateCharges(RentalAgreement rentalAgreement) {
-		BigDecimal preDiscountCharge = rentalAgreement.getDailyRentalCharge().multiply(
-				new BigDecimal(rentalAgreement.getChargeDays()));
-		rentalAgreement.setPreDiscountCharge(preDiscountCharge);
-
-		//TODO disgusting fix me
-		BigDecimal discountPercent = new BigDecimal(rentalAgreement.getDiscountPercent());
-		BigDecimal oneHundred = new BigDecimal(100);
-		BigDecimal discountAmount = preDiscountCharge.multiply(discountPercent).divide(oneHundred);
-		rentalAgreement.setDiscountAmount(discountAmount);
-
-		rentalAgreement.setFinalCharge(rentalAgreement.getPreDiscountCharge().subtract(rentalAgreement.getDiscountAmount()));
 		return rentalAgreement;
 	}
 

@@ -1,17 +1,18 @@
 package org.example.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.time.LocalDate;
 
+/**
+ * Response object for the Checkout API - contains all the fields we need
+ * <p>
+ * Note, some of these could be considered derived fields (i.e. finalCharge, preDiscountCharge) but
+ * as this feels like the kind of thing that could be cached in a database, we declare them individually
+ */
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class RentalAgreement {
 
 	private String toolCode;
@@ -32,7 +33,8 @@ public class RentalAgreement {
 
 
 	/**
-	 * Build the basic rental agreement based on the Tool, Rental Charge and Checkout passed in
+	 * Build the basic rental agreement based on the Tool, Rental Charge and Checkout passed in -
+	 * sets all basic derived fields - including setting chargedDays to rentalDays
 	 *
 	 * @param tool
 	 * @param rentalCharge
@@ -54,31 +56,17 @@ public class RentalAgreement {
 
 		dailyRentalCharge = rentalCharge.getDailyRate();
 		discountPercent = checkout.getDiscountPercent();
+
+		//Prevent null pointers
+
+		preDiscountCharge = new BigDecimal(0);
+		discountAmount = new BigDecimal(0);
+		finalCharge = new BigDecimal(0);
 	}
 
-	public void setDiscountAmount(BigDecimal discountAmount) {
-		this.discountAmount = setBigDecimalScale(discountAmount);
-	}
-
-	public void setPreDiscountCharge(BigDecimal preDiscountCharge) {
-		this.preDiscountCharge = setBigDecimalScale(preDiscountCharge);
-	}
-
-	/**
-	 * If we want to change rounding rules - change here
-	 *
-	 * @param value BigDecimal to round
-	 * @return the Decimal, with a scale of 2 rounded half up
-	 */
-	private BigDecimal setBigDecimalScale(BigDecimal value) {
-		if (value != null) {
-			value.setScale(2, RoundingMode.HALF_UP);
-		}
-		return value;
-	}
 
 	/**
-	 * removes the passed in number of charge days
+	 * removes the passed in number of charge days simply for convenience
 	 *
 	 * @param daysToRemove
 	 * @return
@@ -91,7 +79,7 @@ public class RentalAgreement {
 	/**
 	 * Spits out a description of this rental agreement to the console/log
 	 * <p>
-	 * TODO Be less hardcoded
+	 * TODO Be less hardcoded? also maybe write to a log rather than console
 	 */
 	public void toConsole() {
 		logMessage("Tool Code : " + toolCode);
@@ -110,6 +98,11 @@ public class RentalAgreement {
 
 	}
 
+	/**
+	 * Simple method, in case we want to do logging differently in the future, right now just a print statement
+	 *
+	 * @param message
+	 */
 	private void logMessage(String message) {
 		//TODO Setup Logging
 		System.out.println(message);

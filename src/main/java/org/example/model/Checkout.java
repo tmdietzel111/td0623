@@ -10,6 +10,9 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
+/**
+ * Simple Data object for the POST body we expect on the API - simple JSON formatters for dates, all fields are expected
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
