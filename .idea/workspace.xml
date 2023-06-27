@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d4f115a-94d4-4c04-a762-20f3768a52c8" name="Changes" comment="chore: initial wiring">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Checkout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/RentalAgreement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="3d4f115a-94d4-4c04-a762-20f3768a52c8" name="Changes" comment="feature: basic functionality, needs massive cleanup">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/util/DayCountingUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/util/HolidayUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/StoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/StoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Checkout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/RentalAgreement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/RentalAgreement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/RentalCharge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/RentalCharge.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/CheckoutService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/CheckoutService.java" afterDir="false" />
     </list>
@@ -90,8 +88,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -103,6 +101,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
@@ -121,7 +122,7 @@
     "code.cleanup.on.save": "true",
     "onboarding.tips.debug.path": "C:/Users/tdiet/IdeaProjects/td0623/src/main/java/org/example/Main.java",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "advanced.settings"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
@@ -229,8 +230,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.td0623 [bootRunMainClassName]" />
         <item itemvalue="Gradle.td0623 [build]" />
+        <item itemvalue="Gradle.td0623 [bootRunMainClassName]" />
         <item itemvalue="Gradle.td0623 [clean]" />
         <item itemvalue="Application.Main" />
       </list>
@@ -245,11 +246,21 @@
       <option name="presentableId" value="Default" />
       <updated>1687817255311</updated>
     </task>
+    <task id="LOCAL-00001" summary="feature: basic functionality, needs massive cleanup">
+      <option name="closed" value="true" />
+      <created>1687835244445</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1687835244446</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chore: initial wiring" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: initial wiring" />
+    <MESSAGE value="feature: basic functionality, needs massive cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: basic functionality, needs massive cleanup" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

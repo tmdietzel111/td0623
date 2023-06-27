@@ -49,18 +49,33 @@ public class RentalAgreement {
 		checkoutDate = checkout.getCheckoutDate();
 
 		//dueDate is derived from the above two fields
-		//Note, I'm assuming a One day rental is due the same day its checked out
-		//TODO Verify this assumption
-		dueDate = checkoutDate.plusDays(rentalDays - 1);
+		//Checked out on Friday means due on Saturday and we only charge for Friday
+		//TODO verify above assumption
+		dueDate = checkoutDate.plusDays(rentalDays);
 
 		dailyRentalCharge = rentalCharge.getDailyRate();
 		discountPercent = checkout.getDiscountPercent();
 	}
 
 	public void setDiscountAmount(BigDecimal discountAmount) {
-		if (discountPercent != null) {
-			this.discountAmount = discountAmount.setScale(2, RoundingMode.HALF_UP);
+		this.discountAmount = setBigDecimalScale(discountAmount);
+	}
+
+	public void setPreDiscountCharge(BigDecimal preDiscountCharge) {
+		this.preDiscountCharge = setBigDecimalScale(preDiscountCharge);
+	}
+
+	/**
+	 * If we want to change rounding rules - change here
+	 *
+	 * @param value BigDecimal to round
+	 * @return the Decimal, with a scale of 2 rounded half up
+	 */
+	private BigDecimal setBigDecimalScale(BigDecimal value) {
+		if (value != null) {
+			value.setScale(2, RoundingMode.HALF_UP);
 		}
+		return value;
 	}
 
 	/**
