@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d4f115a-94d4-4c04-a762-20f3768a52c8" name="Changes" comment="feature: Unit Tests and bug fixes">
+    <list default="true" id="3d4f115a-94d4-4c04-a762-20f3768a52c8" name="Changes" comment="feature: Correct minimum rental days">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Checkout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/controller/StoreControllerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/controller/StoreControllerIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/RentalAgreement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/RentalAgreement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/ToolType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/ToolType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +130,7 @@
       <recent name="C:\Users\tdiet\IdeaProjects\td0623\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.StoreControllerIntegrationTest.verifyMinOneDay">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="td0623.main" />
@@ -302,7 +302,15 @@
       <option name="project" value="LOCAL" />
       <updated>1687920965278</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feature: Correct minimum rental days">
+      <option name="closed" value="true" />
+      <created>1687921783408</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1687921783408</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -311,7 +319,8 @@
     <MESSAGE value="chore: format code" />
     <MESSAGE value="chore: Add javadocs and comments" />
     <MESSAGE value="feature: Unit Tests and bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: Unit Tests and bug fixes" />
+    <MESSAGE value="feature: Correct minimum rental days" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: Correct minimum rental days" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -82,18 +82,18 @@ public class RentalAgreement {
 	 * TODO Be less hardcoded? also maybe write to a log rather than console
 	 */
 	public void toConsole() {
-		logMessage("Tool Code : " + toolCode);
-		logMessage("Tool type : " + toolType.name());
-		logMessage("Tool Brand : " + toolBrand);
-		logMessage("Rental Days : " + rentalDays);
-		logMessage("Check out date  : " + checkoutDate.toString());
-		logMessage("Due Date : " + dueDate.toString());
-		logMessage("Daily Rental Charge : $" + dailyRentalCharge);
-		logMessage("Charge Days : " + chargeDays);
-		logMessage("Pre-discount charge : " + preDiscountCharge);
-		logMessage("Discount Percent : " + discountPercent + "%");
-		logMessage("Discount amount : $" + discountAmount);
-		logMessage("Final Charge : $" + finalCharge);
+		logMessage("Tool Code: " + toolCode);
+		logMessage("Tool type: " + toolType.getName());
+		logMessage("Tool Brand: " + toolBrand);
+		logMessage("Rental Days: " + rentalDays);
+		logMessage("Check out date: " + checkoutDate.toString());
+		logMessage("Due Date: " + dueDate.toString());
+		logMessage("Daily Rental Charge: $" + dailyRentalCharge);
+		logMessage("Charge Days: " + chargeDays);
+		logMessage("Pre-discount charge: $" + preDiscountCharge);
+		logMessage("Discount Percent: " + discountPercent + "%");
+		logMessage("Discount amount: $" + discountAmount);
+		logMessage("Final Charge: $" + finalCharge);
 
 
 	}
