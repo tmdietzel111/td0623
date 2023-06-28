@@ -51,5 +51,24 @@ public class StoreControllerIntegrationTest {
 						.contentType(MediaType.APPLICATION_JSON));
 	}
 
+	/**
+	 * You named this, not me
+	 * <p>
+	 * JAKR - 9/3/15 - 5 days , 101 %
+	 * <p>
+	 * Expect validation error from 101 percent discount
+	 */
+	@Test
+	public void verifyMinOneDay() throws Exception {
+		String user = "{\"toolCode\": \"JAKR\", \"rentalDays\" :0,\"checkoutDate\": \"09/03/2015\", \"discountPercent\": 50 }";
+		mockMvc.perform(MockMvcRequestBuilders.post("/checkout")
+						.content(user)
+						.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(MockMvcResultMatchers.status().isBadRequest())
+				.andExpect(MockMvcResultMatchers.jsonPath("$.rentalDays", Is.is("Must rent for at least one Day")))
+				.andExpect(MockMvcResultMatchers.content()
+						.contentType(MediaType.APPLICATION_JSON));
+	}
+
 
 }

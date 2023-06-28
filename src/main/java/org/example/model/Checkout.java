@@ -22,7 +22,7 @@ public class Checkout {
 	private String toolCode;
 
 	@NotNull(message = "Need a count of Rental Days")
-	@Min(value = 0, message = "Must rent for at least one Day")
+	@Min(value = 1, message = "Must rent for at least one Day")
 	private Integer rentalDays;
 
 	@NotNull(message = "Must have a checkout date")
