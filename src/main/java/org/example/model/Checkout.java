@@ -26,7 +26,7 @@ public class Checkout {
 	private Integer rentalDays;
 
 	@NotNull(message = "Must have a checkout date")
-	@JsonFormat(pattern = "MM-dd-yyyy")
+	@JsonFormat(pattern = "MM/dd/yyyy")
 	private LocalDate checkoutDate;
 
 	@NotNull(message = "Need a Discount Per")

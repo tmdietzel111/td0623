@@ -19,10 +19,10 @@ public class RentalAgreement {
 	private ToolType toolType;
 	private String toolBrand;
 	private Integer rentalDays;
-	@JsonFormat(pattern = "MM-dd-yyyy")
+	@JsonFormat(pattern = "MM/dd/yyyy")
 	private LocalDate checkoutDate;
 
-	@JsonFormat(pattern = "MM-dd-yyyy")
+	@JsonFormat(pattern = "MM/dd/yyyy")
 	private LocalDate dueDate;
 	private BigDecimal dailyRentalCharge;
 	private Integer chargeDays;
@@ -36,9 +36,9 @@ public class RentalAgreement {
 	 * Build the basic rental agreement based on the Tool, Rental Charge and Checkout passed in -
 	 * sets all basic derived fields - including setting chargedDays to rentalDays
 	 *
-	 * @param tool
-	 * @param rentalCharge
-	 * @param checkout
+	 * @param tool         Tool used in the Agreement
+	 * @param rentalCharge Rental Charge associated with the tool
+	 * @param checkout     Checkout details about the agreement
 	 */
 	public RentalAgreement(Tool tool, RentalCharge rentalCharge, Checkout checkout) {
 		toolCode = checkout.getToolCode();
@@ -68,8 +68,8 @@ public class RentalAgreement {
 	/**
 	 * removes the passed in number of charge days simply for convenience
 	 *
-	 * @param daysToRemove
-	 * @return
+	 * @param daysToRemove How many days to remove from the charge day
+	 * @return the new charge day value
 	 */
 	public Integer removeChargeDays(int daysToRemove) {
 		return chargeDays -= daysToRemove;
@@ -101,7 +101,7 @@ public class RentalAgreement {
 	/**
 	 * Simple method, in case we want to do logging differently in the future, right now just a print statement
 	 *
-	 * @param message
+	 * @param message The message to 'log' or send to console
 	 */
 	private void logMessage(String message) {
 		//TODO Setup Logging

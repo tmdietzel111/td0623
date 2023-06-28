@@ -4,21 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d4f115a-94d4-4c04-a762-20f3768a52c8" name="Changes" comment="chore: format code">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exception/CheckoutException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/util/ChargeUtil.java" afterDir="false" />
+    <list default="true" id="3d4f115a-94d4-4c04-a762-20f3768a52c8" name="Changes" comment="feature: Unit Tests and bug fixes">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/controller/StoreControllerIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/service/CheckoutServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/util/ChargeUtilTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/util/DayCountingUtilTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/util/HolidayUtilTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/StoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/StoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/exception/CheckoutException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/exception/CheckoutException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Checkout.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/RentalAgreement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/RentalAgreement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/RentalCharge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/RentalCharge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Tool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Tool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/ToolType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/ToolType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repository/ToolRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repository/ToolRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/CheckoutService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/CheckoutService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/util/DayCountingUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/util/DayCountingUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/util/HolidayUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/util/HolidayUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,84 +139,123 @@
       <recent name="C:\Users\tdiet\IdeaProjects\td0623\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="td0623.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="td0623 [bootRunMainClassName]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.Tests in 'td0623.test'">
+    <configuration name="CheckoutServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="bootRunMainClassName" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.service.CheckoutServiceTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
+      <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="td0623 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CheckoutServiceTest.test5" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.service.CheckoutServiceTest.test5&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
+      <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="td0623 [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DayCountingUtilTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="clean" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.util.DayCountingUtilTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="DayCountingUtilTest.verifyHolidayCountStartingAtFourth" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.util.DayCountingUtilTest.verifyHolidayCountStartingAtFourth&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'td0623.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
@@ -236,11 +273,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.td0623 [clean]" />
-        <item itemvalue="Gradle.td0623 [build]" />
-        <item itemvalue="Gradle.td0623 [bootRunMainClassName]" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Gradle.td0623 [build]" />
+        <item itemvalue="Gradle.Tests in 'td0623.test'" />
+        <item itemvalue="Gradle.DayCountingUtilTest.verifyHolidayCountStartingAtFourth" />
+        <item itemvalue="Gradle.DayCountingUtilTest" />
+        <item itemvalue="Gradle.CheckoutServiceTest" />
+        <item itemvalue="Gradle.CheckoutServiceTest.test5" />
       </list>
     </recent_temporary>
   </component>
@@ -269,14 +306,35 @@
       <option name="project" value="LOCAL" />
       <updated>1687901161373</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="chore: Add javadocs and comments">
+      <option name="closed" value="true" />
+      <created>1687907463255</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687907463255</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chore: initial wiring" />
     <MESSAGE value="feature: basic functionality, needs massive cleanup" />
     <MESSAGE value="chore: format code" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: format code" />
+    <MESSAGE value="chore: Add javadocs and comments" />
+    <MESSAGE value="feature: Unit Tests and bug fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: Unit Tests and bug fixes" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/org/example/util/DayCountingUtilTest.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

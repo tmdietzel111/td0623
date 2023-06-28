@@ -20,15 +20,16 @@ public class DayCountingUtil {
 	 * <p>
 	 * Second step could be cleaned up, but its <6 steps worse case so we'll be okay
 	 *
-	 * @param rentalAgreement
-	 * @return
+	 * @param rentalAgreement Agreement to count weekends during
+	 * @return Number of weekend days in the agreement
 	 */
 	public static int countWeekends(RentalAgreement rentalAgreement) {
 
 		int rentalDays = rentalAgreement.getRentalDays();
 		LocalDate startDate = rentalAgreement.getCheckoutDate();
 		//There are two weekend days for every seven days
-		int weekendDays = rentalDays * 2 / 7;
+		int numWeeks = rentalDays / 7;
+		int weekendDays = numWeeks * 2;
 
 		int remainingDays = rentalDays % 7;
 
@@ -50,13 +51,14 @@ public class DayCountingUtil {
 	 * <p>
 	 * Get the holidays from the Utility for that year, determine if its between the two days and add it if so
 	 *
-	 * @param rentalAgreement
+	 * @param rentalAgreement the agreement to check how many holidays are in
 	 * @return count of holidays in the rental agreement
 	 */
 	public static int countHolidays(RentalAgreement rentalAgreement) {
 
 		LocalDate startDate = rentalAgreement.getCheckoutDate();
-		LocalDate endDate = rentalAgreement.getDueDate();
+		//For this calculation, the last day isn't relevant - one day rentals only care about the one day
+		LocalDate endDate = rentalAgreement.getDueDate().minusDays(1);
 
 		int holidayCount = 0;
 		int startYear = startDate.getYear();
